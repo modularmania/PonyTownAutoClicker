@@ -1,4 +1,7 @@
-# Pony Town Auto-CLicker
-This is an attempt to make an auto-clicker that does not set off the Pony Town triggers, simple as that.
-I made this in about an hour (from concept to publish), so there may be a few mistakes. 
-Any review, feedback, or addition would be appreciated.
+# Pony Town Auto-Clicker
+> [!WARNING]
+> This project is for testing / research purposes only. I do not condone any actual use of it on Pony Town's official servers, nor will I ever do so.<br>
+> Also, there is no disconnect function at this current moment, so using it for long periods of time (aka overnight) would most likely set off their systems.
+
+This is a simple auto-clicker I made one night after drinking three monsters back-to-back. It is untested on Pony Town but the inputs seem to work when testing it elsewhere (ie: Notepad.)
+It is made in such a way that every movement is randomized so that it appears as realistic to a human's touch as possible.
