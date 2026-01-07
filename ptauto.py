@@ -475,6 +475,10 @@ while True:
      def stand():
           print("running stand()")
 
+          time.sleep(random.randrange(1, 34))
+          pyautogui.press('f5')
+          time.sleep(random.randrange(5, 16))
+
           if "Support us on Patreon!" in chattxt or "Play on Safe server" in chattxt or "No swearing or adult topics are allowed" in chattxt:
                pyautogui.scroll(-1500)
                pyautogui.scroll(-500)
@@ -529,4 +533,5 @@ while True:
 
      time.sleep(5)
      stand()
+
 
