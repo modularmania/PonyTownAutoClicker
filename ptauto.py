@@ -1,11 +1,23 @@
 import time
 import pyautogui
 import random
+import numpy as nm
+import pytesseract
+import cv2
+from PIL import ImageGrab
 
-screenWidth, screenHeight = pyautogui.size()
+screenWidth, screenHeight = 2246, 1524
+pytesseract.pytesseract.tesseract_cmd = r'D:\Users\mcand\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
+count = 0
+
 while True:
      pyautogui.PAUSE = 1
+     sc = ImageGrab.grab(bbox=(14, 135, 2500, 1523))
+     chattxt = pytesseract.image_to_string(cv2.cvtColor(nm.array(sc), cv2.COLOR_BGR2GRAY), lang='eng')
+
      def runAround():
+          print("running runAround()")
+
           pyautogui.PAUSE = 0.8
           for _ in range(random.randrange(4,12)):
                with pyautogui.hold('shift'):
@@ -24,6 +36,8 @@ while True:
 
 
      def standLay():
+          print("running standLay()")
+
           pyautogui.press('x')
           pyautogui.PAUSE = 0.7
           pyautogui.press('x')
@@ -59,6 +73,8 @@ while True:
 
 
      def standSit():
+          print("running standSit()")
+
           pyautogui.press('x')
           time.sleep(random.randrange(300, 540))
 
@@ -91,6 +107,8 @@ while True:
 
 
      def standFly():
+          print("running standFly()")
+
           pyautogui.press('c')
           time.sleep(6)
 
@@ -130,9 +148,11 @@ while True:
 
 
      def sendMessage():
+         print("running sendMessage()")
+
          pyautogui.press('enter')
          pyautogui.PAUSE = 1.2
-         pyautogui.write('Test.', interval = 0.25)
+         pyautogui.write('blep. ' + str(random.randint(1,100)), interval = 0.25)
          pyautogui.press('enter')
 
          stand()
@@ -140,6 +160,8 @@ while True:
 
 
      def clickPlus():
+          print("running clickPlus()")
+
           pyautogui.click()
 
           pyautogui.PAUSE = 1.5
@@ -160,6 +182,8 @@ while True:
 
 
      def sitLay():
+          print("running sitLay()")
+
           pyautogui.press('x')
           time.sleep(random.randrange(100, 340))
 
@@ -194,6 +218,8 @@ while True:
 
 
      def sitPushUp():
+          print("running sitPushUp()")
+
           pyautogui.doubleClick(random.randrange(1, screenWidth), random.randrange(1, screenHeight))
           pyautogui.PAUSE = 0.8
 
@@ -224,6 +250,8 @@ while True:
 
 
      def sitFly():
+          print("running sitFly()")
+
           pyautogui.press('c')
           pyautogui.press('c')
           time.sleep(10)
@@ -261,6 +289,8 @@ while True:
 
 
      def layPushUp():
+          print("running layPushUp()")
+
           pyautogui.doubleClick(random.randrange(1,screenWidth), random.randrange(1, screenHeight))
           pyautogui.PAUSE = 0.8
           for _ in range(random.randrange(4,12)):
@@ -290,6 +320,8 @@ while True:
 
 
      def laySit():
+          print("running laySit()")
+
           pyautogui.press('c')
           time.sleep(random.randrange(200, 440))
 
@@ -322,6 +354,8 @@ while True:
 
 
      def layFly():
+          print("running layFly()")
+
           pyautogui.PAUSE = 1.2
           pyautogui.press('c')
           pyautogui.press('c')
@@ -364,6 +398,8 @@ while True:
 
 
      def flySit():
+          print("running flySit()")
+
           pyautogui.press('c')
           pyautogui.press('c')
           time.sleep(random.randrange(150, 590))
@@ -391,6 +427,8 @@ while True:
 
 
      def flyLay():
+          print("running flyLay()")
+
           pyautogui.press('x')
           pyautogui.press('x')
           pyautogui.PAUSE = 0.5
@@ -425,6 +463,8 @@ while True:
                sendMessage()
 
      def hop():
+          print("running hop()")
+
           pyautogui.doubleClick(random.randrange(1, screenWidth), random.randrange(1, screenHeight))
           for _ in range(random.randrange(2, 10)):
                pyautogui.press('down')
@@ -433,6 +473,18 @@ while True:
           stand()
 
      def stand():
+          print("running stand()")
+
+          if "Support us on Patreon!" in chattxt or "Play on Safe server" in chattxt or "No swearing or adult topics are allowed" in chattxt:
+               pyautogui.scroll(-1500)
+               pyautogui.scroll(-500)
+               pyautogui.click(1252, 547)
+
+          pyautogui.click(174, 33)
+          pyautogui.moveTo(1297, 893)
+
+          pyautogui.press('esc')
+
           pyautogui.PAUSE = 1
           pyautogui.press('x')
           pyautogui.press('x')
@@ -475,4 +527,5 @@ while True:
           elif RAND <= 100:
                sendMessage()
 
+     time.sleep(5)
      stand()
