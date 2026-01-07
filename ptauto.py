@@ -7,7 +7,7 @@ import cv2
 from PIL import ImageGrab
 
 screenWidth, screenHeight = 2246, 1524
-pytesseract.pytesseract.tesseract_cmd = r'D:\Users\mcand\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = # PLACE TESSERACT EXECUTABLE PATH HERE.
 count = 0
 
 while True:
@@ -529,3 +529,4 @@ while True:
 
      time.sleep(5)
      stand()
+
